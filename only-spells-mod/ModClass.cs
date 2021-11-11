@@ -74,23 +74,28 @@ namespace only_spells_mod
         {
             if ((intName == "MPCharge") && behaviour.IsFocusing)
             {
-                var diff = value - old_value;
-                if (diff < 0)
+                if (PlayerData.instance.MPReserveMax >= value)
                 {
-                    PlayerData.instance.SetIntInternal(intName, old_value - (diff * 2));
+                    var diff = value - old_value;
+                    if (diff < 0)
+                    {
+                        PlayerData.instance.SetIntInternal(intName, old_value - (diff * 2));
+                    }
+                    old_value = value;
                 }
-
-                old_value = value;
             }
             else if ((intName == "MPReserve") && behaviour.IsFocusing)
             {
-                var diff = value - reserve_old_value;
-                if (diff < 0)
+                if (PlayerData.instance.MPReserveMax >= value)
                 {
-                    PlayerData.instance.SetIntInternal(intName, reserve_old_value - (diff * 2));
-                }
+                    var diff = value - reserve_old_value;
+                    if (diff < 0)
+                    {
+                        PlayerData.instance.SetIntInternal(intName, reserve_old_value - (diff * 2));
+                    }
 
-                old_value = value;
+                    old_value = value;
+                }
             }
             else if (intName == "MPReserve")
             {
