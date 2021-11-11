@@ -21,8 +21,11 @@ namespace only_spells_mod
 
             if (PlayerData.instance != null)
             {
-                PlayerData.instance.fireballLevel = 1;
-                PlayerData.instance.hasSpell = true;
+                if (PlayerData.instance.fireballLevel == 0)
+                {
+                    PlayerData.instance.fireballLevel = 1;
+                    PlayerData.instance.hasSpell = true;
+                }
             }
 
             if (HeroController.instance != null)
@@ -32,7 +35,7 @@ namespace only_spells_mod
                 {
                     if (++refresh_count % 10 == 0)
                     {
-                        HeroController.instance.AddMPCharge(2);
+                        HeroController.instance.AddMPCharge(1);
                         refresh_count = 0;
                     }
                     last_refresh = now;
@@ -42,7 +45,7 @@ namespace only_spells_mod
                 {
                     IsFocusing = false;
                 } 
-                else if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+                else if (Input.GetKeyDown(KeyCode.Joystick1Button1) && HeroController.instance.CanFocus())
                 {
                     IsFocusing = true;
                 }
