@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c0feb452-5018-43cb-8a62-b8fd90850583": {
+      "ProjectGuid": "c0feb452-5018-43cb-8a62-b8fd90850583",
+      "DisplayName": "only-spells-mod",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

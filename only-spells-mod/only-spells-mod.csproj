@@ -12,10 +12,10 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <LangVersion>latest</LangVersion>
     <!-- Change this to the path of your modded HK installation -->
-    <HollowKnightRefs>C:\Users\xshaf\source\repos\Hollow-bases\1.4</HollowKnightRefs>
-    <OutputHollowKnightRefs>D:\SteamLibrary\steamapps\common\Hollow Knight\hollow_knight_Data\Managed</OutputHollowKnightRefs>
+    <HollowKnightRefs>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed</HollowKnightRefs>
+    <OutputHollowKnightRefs>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed</OutputHollowKnightRefs>
     <!-- Change this to the path where you want the ready-to-upload exports to be -->
-    <ExportDir>E:/Github_Projects/__Exports/</ExportDir>
+    <ExportDir>C:/OnlySpellsMod/</ExportDir>
   </PropertyGroup>
   <Target Name="CopyMod" AfterTargets="PostBuildEvent">
     <RemoveDir Directories="$(ExportDir)/$(TargetName)/" />
